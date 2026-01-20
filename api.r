@@ -13,10 +13,13 @@ foliar <- loadByProduct(dpID="DP1.10026.001", site="HARV",
                         token=NEON_TOKEN)
 
 # examine the foliar data
-summary(foliar)
+# summary(foliar)
 
-# pull a column from cfc_carbonNitrogen 
-carbon_pct <- foliar[["cfc_carbonNitrogen"]][["carbonPercent"]]
-CN_ratio <- foliar[["cfc_carbonNitrogen"]][["CNratio"]]
+# pull the sub-dataset?
+cfc_CN <- foliar[["cfc_carbonNitrogen"]]
 
-carbon_pct
+# inspect the dataframe
+summary(cfc_CN)
+
+# plot two ariables against each other
+plot(cfc_CN$carbonPercent, cfc_CN$CNratio)
